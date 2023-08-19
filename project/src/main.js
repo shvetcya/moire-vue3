@@ -1,7 +1,14 @@
 import { createApp } from "vue";
-import App from "./App.vue";
-import "./registerServiceWorker";
-import router from "./router";
-import store from "./store";
+import App from "@/App.vue";
+import router from "@/router/index.js";
+import store from "@/store/index.js";
+import numberFormat from "@/helpers/numberFormat";
+import declOfNum from "@/helpers/declOfNum";
 
-createApp(App).use(store).use(router).mount("#app");
+const app = createApp(App);
+
+app.use(router).use(store).mount("#app");
+app.config.globalProperties.$filters = {
+  numberFormat,
+  declOfNum,
+};
