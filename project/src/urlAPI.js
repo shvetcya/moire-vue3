@@ -1,0 +1,1 @@
+export const urlAPI = 'https://vue-moire.skillbox.cc/api/';
