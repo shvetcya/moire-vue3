@@ -7,7 +7,7 @@
 
             <router-link class="header__logo" :to="{ name: 'Home' }">
                 <img
-                    src="/img/svg/logo-moire.svg"
+                    src="/moire-vue3/img/svg/logo-moire.svg"
                     alt="Логотип интернет магазина Moire"
                     width="116"
                     height="34"

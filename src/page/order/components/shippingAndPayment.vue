@@ -24,7 +24,7 @@
                         v-model="sipping"
                     />
                     <span class="options__value">
-                        Курьером <b>1 200 ₽</b>
+                        Курьером <b>290 ₽</b>
                     </span>
                 </label>
             </li>
