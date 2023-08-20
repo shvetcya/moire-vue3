@@ -13,11 +13,12 @@ export const catalogStore = {
         priceMin: 0,
         priceMax: 0,
         sortId: 0,
+        colorId: [],
         materialId: [],
         collectionId: [],
         //список товары и колличество отображаймых
         products: [],
-        productShow: 6,
+        productShow: 12,
         //состояния загрузки и ошибки при получении товаров
         loadingProduct: false,
         loadingProductError: false,
@@ -52,6 +53,9 @@ export const catalogStore = {
         setMaterialId(state, materialId) {
             state.materialId = materialId
         },
+        setColorId(state, colorId) {
+            state.colorId = colorId
+        },
         setCollectionId(state, collectionId) {
             state.collectionId = collectionId
         },
@@ -61,7 +65,7 @@ export const catalogStore = {
         getProducts(context) {
             this.state.product.loadingProduct = true;
             this.state.product.products = [];
-
+            console.log(this.state.product.colorId)
             return axios
                 .get(urlAPI + 'products', {
                     params: {
@@ -71,6 +75,7 @@ export const catalogStore = {
                         //сортировка
                         categoryId: this.state.product.sortId,
                         materialIds: this.state.product.materialId,
+                        colorIds: this.state.product.colorId,
                         seasonIds: this.state.product.collectionId,
                         minPrice: this.state.product.priceMin,
                         maxPrice: this.state.product.priceMax,

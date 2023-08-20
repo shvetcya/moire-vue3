@@ -10,6 +10,12 @@ export const sortCategoryArr = () => {
     })
 }
 
+export const sortColorsArr = () => {
+    return axios({
+        method: "GET",
+        url: urlAPI + "colors",
+    })
+}
 export const sortMaterialsArr = () => {
     return axios({
         method: "GET",
