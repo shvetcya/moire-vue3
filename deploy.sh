@@ -4,7 +4,7 @@
 # set -e
 
 # сборка
-npm run build
+NODE_OPTIONS='--openssl-legacy-provider' npm run  build
 
 # переход в каталог сборки
 cd dist
@@ -15,7 +15,7 @@ cd dist
 git init
 git add -A
 git commit -m 'deploy'
-git push -f https://github.com/shvetcya/moire-vue3.git master:gh-pages
+git push -f https://github.com/shvetcya/moire-vue3.git develop:gh-pages
 # если вы публикуете по адресу https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
